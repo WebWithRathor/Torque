@@ -1,21 +1,21 @@
 @font-face {
     font-family: dm;
-    src: url(/fonts/dm-regular.ttf);
+    src: url(/fonts/dm-regular.woff2);
 }
 
 @font-face {
     font-family: newslight;
-    src: url(/fonts/newsreader-light.ttf);
+    src: url(/fonts/newsreader-light.woff2);
 }
 
 @font-face {
     font-family: newsregular;
-    src: url(/fonts/newsreader-regular.ttf);
+    src: url(/fonts/newsreader-regular.woff2);
 }
 
 @font-face {
     font-family: dinamo;
-    src: url(/fonts/dianmo.ttf);
+    src: url(/fonts/dianmo.woff2);
 }
 
 * {
