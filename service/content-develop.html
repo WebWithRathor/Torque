@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Development</title>
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <style>
+        @font-face {
+            font-family: dinamo;
+            src: url(fonts/dianmo.ttf);
+        }
+
+        @font-face {
+            font-family: dm;
+            src: url(fonts/dm-regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: dm;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #main {
+            width: 100%;
+        }
+
+        /* -------------navbar------------- */
+        #navbar {
+            position: fixed;
+            top: 0%;
+            background-color: black;
+            height: 10vh;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2vw 2vw;
+            z-index: 99; 
+        }
+
+        #navbar .logo {
+            margin-bottom: -.5vw;
+            margin-left: -2vw;
+        }
+
+        #navbar .logo img {
+            width: 12vw;
+        }
+
+        #navbar .options {
+            display: flex;
+            align-items: center;
+            gap: 3vw;
+        }
+
+        #navbar .options h2 {
+            font-size: 1.5vw;
+            font-weight: 100;
+            letter-spacing: .01vw;
+            text-transform: uppercase;
+            color: #acb2a0;
+            position: relative;
+        }
+
+        #navbar .options h2::after {
+            content: "";
+            position: absolute;
+            box-shadow: 0px 0px 2px #282e1d;
+            background-color: #282e1d;
+            width: 100%;
+            bottom: -2%;
+            left: 0%;
+            height: .5px;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform ease .5s;
+        }
+
+        #navbar .options h2:hover::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        #navbar .options h2 a {
+            font-family: dinamo;
+            text-decoration: none;
+            color: #acb2a0;
+        }
+
+
+
+
+        #content-developmentment {
+            width: 100%;
+            height: 100vh;
+            padding-top: 4vw;
+            display: flex;
+            background-color: lightcoral;
+            background-color: #24271d;
+            color: #acb2a0;
+            background-color: #acb2a0;
+            color: #24271d;
+            overflow: hidden;
+            position: relative;
+            justify-content: space-between;
+        }
+
+        .prim-heading {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 4vw;
+            color: #2935142c;
+            font-family: dinamo;
+            line-height: .9;
+            font-size: 9vw;
+
+        }
+
+        .box1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2vw;
+            width: 35%;
+            height: 100%;
+            padding-top: 2vw;
+            padding-left: 3vw;
+        }
+
+        .h {
+            display: flex;
+            flex-direction: column;
+            gap: .2vw;
+            width: 100%;
+            height: 9.2vw;
+        }
+
+        .h1 {
+            overflow: hidden;
+            height: 3vw;
+        }
+
+        .h1 h1 {
+            text-transform: uppercase;
+            font-size: 2.3vw;
+        }
+
+        .img-box {
+            width: 100%;
+            height: 30vw;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .pair {
+            position: absolute;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .p1 {
+            top: 0;
+        }
+
+        .p2 {
+            top: 100%;
+
+        }
+
+        .p3 {
+            top: 100%;
+        }
+
+        .pair img {
+            position: absolute;
+            object-fit: cover;
+            width: 20vw;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .i1 {
+            left: 0%;
+        }
+
+        .i3 {
+            right: 0%;
+        }
+
+        .box2 {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .box2 p {
+            letter-spacing: .01vw;
+            font-size: 1.1vw;
+            line-height: 1.3;
+        }
+
+        .child-box2 {
+            align-self: center;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3vw;
+            gap: 1vw;
+            color: #24271d;
+        }
+
+        .c1 {
+            top: 0%
+        }
+
+
+
+        /* ------------footer------------ */
+
+
+        #footer {
+            width: 100%;
+            background-image: url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        .footer-content {
+            width: 100%;
+            background-color: #000000c4;
+            color: #acb2a0;
+        }
+
+        .top {
+            width: 100%;
+            display: flex;
+            padding: 1.5vw 4vw;
+            padding-top: 3vw;
+            gap: 1vw;
+        }
+
+        .footer-part {
+            width: calc(100% / 3);
+            display: flex;
+            flex-direction: column;
+            gap: 1vw;
+            align-items: center;
+
+        }
+
+        .footer-part h2 {
+            font-family: dinamo;
+            text-transform: uppercase;
+            font-size: 3vw;
+            margin-bottom: 3vw;
+        }
+
+        .footer-part i {
+            font-size: 2vw;
+        }
+
+        .footer-part h3 {
+            cursor: pointer;
+            font-size: 1vw;
+        }
+
+        #f1 .info {
+            display: flex;
+            gap: 2vw;
+            width: 70%;
+        }
+
+        .mail {
+            height: 1.4vw;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .mail h3 {
+            position: relative;
+            transition: transform ease .2s;
+        }
+
+        .mail h3::after {
+            content: "T​ORQUEMEDIALAB@GMAIL.COM";
+            position: absolute;
+            left: 0;
+            top: 100%;
+        }
+
+        .mail:hover h3 {
+            transform: translateY(-100%);
+        }
+
+        #f1 i {
+            color: #f6b336;
+        }
+
+        #f2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #f2 .logo {
+            margin: auto;
+            width: 70%;
+        }
+
+        #f2 .logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        #f3 .media {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1vw;
+            width: 70%;
+            justify-content: center;
+        }
+
+        #f3 .media i {
+            cursor: pointer;
+            font-size: 3vw;
+            transition: box-shadow linear .5s;
+
+        }
+
+        #f3 .media i:hover {
+            box-shadow: 2px 2px 10px;
+
+        }
+
+        .fb {
+            color: blue;
+        }
+
+        .insta {
+            background: linear-gradient(to right bottom, rgb(255, 0, 247) 10%, orange, #ff00d4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-stroke: text;
+            color: transparent;
+        }
+
+        .link {
+            color: #1974ca;
+        }
+
+        .pin {
+            color: crimson;
+        }
+
+        .twit {
+            color: blanchedalmond;
+        }
+
+        .bottom {
+            width: 100%;
+            padding-bottom: 2vw;
+
+        }
+
+        .bottom .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4vw;
+            margin-bottom: 1vw;
+            text-transform: capitalize;
+
+        }
+
+        .bottom h4 {
+            width: max-content;
+            margin: auto;
+            position: relative;
+        }
+
+        .bottom h3 {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .bottom h3::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 5%;
+            background-color: gray;
+            transform-origin: right;
+            transform: scale(0);
+            transition: transform ease .5s;
+        }
+
+        .bottom h3:hover:after {
+            transform-origin: left;
+            transform: scale(1);
+        }
+
+        .bottom i {
+            color: crimson;
+        }
+        @media (max-width:700px) {
+            #content-development{
+                flex-direction: column;
+            }
+
+            .prim-heading {
+                line-height: .9;
+                font-size: 10vw;
+            }
+
+            .box1 {
+                justify-content: flex-start;
+                gap: 2vw;
+                width: 100%;
+                height: 50%;
+                padding: 3vw;
+                padding-top: 20vw;
+            }
+
+            .h {
+                height: 20vw;
+            }
+
+            .h1 {
+                height: 10vw;
+            }
+
+            .h1 h1 {
+                font-size: 6vw;
+            }
+
+            .pair img {
+                width: 30vw;
+            }
+
+            .i1 {
+                height: 50%;
+                left: 10%;
+            }
+
+            .i2 {
+                height: 80%;
+                z-index: 1;
+            }
+
+            .i3 {
+                height: 50%;
+                right: 10%;
+            }
+
+            .box2 {
+                width: 100%;
+
+            }
+
+            .box2 p {
+                font-size: 4vw;
+                line-height: 4.1vw;
+                background-color: #acb2a0;
+            }
+
+            .child-box2 {
+                background-color: #acb2a0;
+            }
+
+
+            .top {
+                flex-direction: column;
+                padding: 1.5vw 4vw;
+                padding-top: 5vw;
+            }
+
+            .footer-part {
+                width: 100%;
+                gap: 1vw;
+
+            }
+
+            .footer-part h2 {
+                font-size: 7vw;
+            }
+
+            .footer-part i {
+                font-size: 5vw;
+            }
+
+            .footer-part h3 {
+                font-size: 3vw;
+            }
+
+            #f1 .info {
+                width: 90%;
+                justify-content: center;
+
+            }
+
+            .mail {
+                height: 5.5vw;
+            }
+
+
+
+            #f2 .logo {
+                width: 40vw;
+            }
+
+            #f3 {
+                margin-top: -5vw;
+            }
+
+
+            .bottom {
+                width: 100%;
+                padding-bottom: 2vw;
+
+            }
+
+            .bottom .row {
+                margin: 3vw 0;
+            }
+
+            .bottom h4 {
+                font-size: 3vw;
+            }
+
+            .bottom h3 {
+                font-size: 3.5vw;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <div class="logo"><img
+                src=" https://portfolio-torque-media-lab.my.canva.site/images/211d7b6a058cf5cac09b8879d665f79b.png"
+                alt=""></div>
+        <div class="options">
+            <h2><a target="_blank" href="#">Home</a></h2>
+            <h2><a target="_blank" href="#">About Us</a></h2>
+            <h2><a target="_blank" href="#">Services</a></h2>
+            <h2><a target="_blank" href="#">Contact Us</a></h2>
+        </div>
+    </div>
+    <div id="main">
+        <div id="content-development">
+            <div class="prim-heading">
+                Ad Content <br>Development
+            </div>
+            <div class="box1">
+                <div class="h">
+                    <div class="h1">
+                        <h1>Premium</h1>
+                        <h1>Leading </h1>
+                        <h1>WHY TORQUE MEDIA</h1>
+                    </div>
+                    <div class="h1">
+                        <h1>Advertising Content</h1>
+                        <h1>Advertising Content</h1>
+                        <h1>FOR creating</h1>
+                    </div>
+                    <div class="h1">
+                        <h1> Development Agency</h1>
+                        <h1> BY TORQUE MEDIA LAB</h1>
+                        <h1>advertising content?</h1>
+                    </div>
+                </div>
+                <div class="img-box">
+                    <div class="pair p1">
+                        <img src="https://cdn-ronsela.pressidium.com/wp-content/uploads/2023/03/Untitled-design-4.png"
+                            alt="" class="i1">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1955&q=80"
+                            alt="" class="i2">
+                        <img src="https://komarketing.com/images/2022/01/GettyImages-976370312-640x427.jpg" alt=""
+                            class="i3">
+                    </div>
+                    <div class="pair p2">
+                        <img src="https://www.scottleroymarketing.com/wp-content/uploads/2016/06/canstockphoto12589749-content.jpg"
+                            alt="" class="i1">
+                        <img src="https://images.unsplash.com/photo-1587892063980-f8af3e5733d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80"
+                            alt="" class="i2">
+                        <img src="https://schumachermarketing.com/wp-content/uploads/2018/12/content-development-1a.png"
+                            alt="" class="i3">
+                    </div>
+                    <div class="pair p3">
+                        <img src="https://www.konstructdigital.com/wp-content/uploads/2022/01/content-marketing.jpg.png"
+                            alt="" class="i1">
+                        <img src="https://images.unsplash.com/photo-1553002401-c0945c2ff0b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80"
+                            alt="" class="i2">
+                        <img src="https://technobizz.in/wp-content/uploads/2022/07/content-development.jpg" alt=""
+                            class="i3">
+                    </div>
+
+                </div>
+            </div>
+            <div class="box2">
+
+                <div class="child-box2 c1">
+                    <p>
+                        Torque Media Lab is a premium advertising content development agency in Bhopal. With a team of
+                        accomplished professionals, we provide the best services for advertising content development.
+                        Content is the most igneous term in the coeval market.
+                    </p>
+                    <p>
+                        Media Houses, Influencers, Brands, and Start-Ups; everyone is applying rigorous efforts to
+                        create compelling content. Furthermore, social media content: is comprised of text updates,
+                        images, videos, links, and pretty much everything else you submit on social media. Content is
+                        crucial for achieving business and social media objectives like brand recognition, actionable
+                        insights, user engagement, and customer acquisition.
+                    </p>
+                    <p>
+                        In advertising, content development is crucial since it provides the information your audience
+                        seeks while fostering relationships, increasing conversions, and generating leads. People
+                        frequently expect their favorite firms to consistently produce high-quality content to arouse &
+                        retain consumers' interest in the brand.
+
+                    </p>
+                    <p>
+                        Additionally, your brand will get there: a lot faster if you make sure your information is
+                        understandable, compelling, consistent, findable, and translatable. Therefore, consumers seek
+                        content that is related to their interests. However, they also seek content produced by
+                        relatable and engaging creators. 75% of consumers are more receptive to advertising or branded
+                        material when it is pertinent to them, according to a vital statistic.
+                    </p>
+
+                </div>
+                <div class="child-box2 c2">
+                    <p>
+                        Torque Media Lab is the leading advertising content development agency in Bhopal. We have a team
+                        of profound advertising content developers providing the best services for advertising content
+                        development, marketing, and positioning.
+                    </p>
+                    <p>
+                        According: to our experts, the ultimate objective is to motivate consumers to take action
+                        through content. It's all about what you want to convey and what is on your website because
+                        people don't just buy for the appearance. Our experts understand the demand of the clients. In
+                        addition, equally, formulate the content as per the intent and platform preferences of the
+                        client
+                    </p>
+                    <p>
+                        There are seven content genres: that (are pondered) by our advertising experts. In addition, the
+                        content: is drafted on these particular themes. They are as follows:- Interactive,
+                        Inspirational, Educational, Connecting, Newsworthy, Promotional, and Entertaining.
+                    </p>
+                    <p>
+                        In addition, for digital advertising, our experts follow all the current trends which are
+                        aligned: with the various social media platforms available: out there. Consequently, content
+                        prepared for paid advertising channels: is referred to as content advertising. Pay-per-click
+                        (PPC), paid social media, and sponsored placement are examples of paid advertising methods.
+                        Although it could seem unclear, content marketing is not advertising.
+                    <p>
+                        Torque Media Lab has expertise in creating compelling content for both digital advertising &
+                        traditional advertising. In addition, for digital & social media advertising: we cater to
+                        provide creatives, carousels, AVs, blogs, newsletters, whitepapers, articles, case studies, etc.
+                        Subsequently, for traditional advertising, we provide brochures, flyers, marketing collaterals,
+                        posters, banners, transits, radio commercials, TVCs, etc.
+                    </p>
+                </div>
+                <div class="child-box2 c3">
+                    <p>
+                        Torque Media Lab is a leading advertising content development agency in Bhopal! We cater to
+                        provide the best services for advertisement content development. Our experts are well-versed in
+                        all the modern tools and techniques and craft the best strategies for content creation for
+                        advertising.
+                    </p>
+                    <p>
+                        Subsequently, we analyze the existing content of the brand on various platforms. In addition,
+                        see the intent & the visitor's behavior on the content. It gives us the KPIs of the different
+                        media and assists us in understanding the audience preferences. Consequently, it also helps us
+                        decipher what type of content the customers (are expecting) from the brand.
+                    </p>
+                    <p>
+                        Following all these requisites, we create compelling content for the brand that brings traffic
+                        and converts the traffic into potential customers.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="footer-content">
+                <div class="top">
+
+                    <div class="footer-part" id="f1">
+                        <h2>Contact Info</h2>
+                        <div class="info">
+                            <i class="ri-map-pin-fill"></i>
+                            <h3>AAKRITI BUSINESS CENTRE, 3RD FLOOR, ​BHOPA​L, M.P.</h3>
+                        </div>
+                        <div class="info">
+                            <i class="ri-mail-fill"></i>
+                            <div class="mail">
+                                <h3>T​ORQUEMEDIALAB@GMAIL.COM</h3>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <i class="ri-phone-fill"></i>
+                            <h3>+​91 9424341999</h3>
+                        </div>
+                    </div>
+                    <div class="footer-part" id="f2">
+                        <div class="logo">
+                            <img src="https://portfolio-torque-media-lab.my.canva.site/images/e0157bb2ab8db130b6c6c37535fd3d24.png"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="footer-part" id="f3">
+                        <h2>find us</h2>
+                        <div class="media">
+                            <a target="_blank" href="https://www.facebook.com/people/Torque-Media-Lab/100083825307002/"><i class="ri-facebook-circle-fill fb"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/torquemedialab/"><i class="ri-instagram-fill insta"></i></a>
+                            <a target="_blank" href="https://www.linkedin.com/company/82560492/admin/"><i class="ri-linkedin-box-fill link"></i></a>
+                            <a target="_blank" href="https://in.pinterest.com/TorqueMediaLab/"><i class="ri-pinterest-fill pin"></i></a>
+                            <a target="_blank" href="https://twitter.com/torquemedialab"><i class="ri-twitter-fill twit"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="row">
+                        <h3>privacy policy</h3>
+                        <h3>terms & conditions</h3>
+                    </div>
+                    <h4>Thnaks for visiting <i class="ri-heart-fill"></i></h4>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script>
+        function loco() {
+            gsap.registerPlugin(ScrollTrigger);
+            // Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+            const locoScroll = new LocomotiveScroll({
+                el: document.querySelector(`#main`),
+                smooth: true
+            });
+            // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+            locoScroll.on(`scroll`, ScrollTrigger.update);
+            // tell ScrollTrigger to use these proxy methods for the `#main` element since Locomotive Scroll is hijacking things
+            ScrollTrigger.scrollerProxy(`#main`, {
+                scrollTop(value) {
+                    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+                }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+                getBoundingClientRect() {
+                    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+                },
+                // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+                pinType: document.querySelector(`#main`).style.transform ? `transform` : `fixed`
+            });
+            // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+            ScrollTrigger.addEventListener(`refresh`, () => locoScroll.update());
+            // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+            ScrollTrigger.refresh();
+        }
+        loco();
+
+
+
+
+
+
+
+
+
+        function servicePageAnimation() {
+            var a = gsap.timeline({
+                scrollTrigger: {
+                    scroller: "#main",
+                    trigger: "#content-developmentment",
+                    start: "top 0%",
+                    end: "top -20%",
+                    scrub: 1,
+                    pin: true,
+                }
+            })
+            a
+                .to(".c1 p", {
+                    opacity: 0
+
+                }, "e")
+                .to(".c1", {
+                    top: "-100%"
+                }, "e")
+                .to("h1", {
+                    y: "-100%"
+                }, "e")
+                .to(".p1", {
+                    top: "-100%"
+                }, "e")
+                .to(".p2", {
+                    top: "0%"
+                }, "e")
+                .to(".c2", {
+                    top: 0
+                }, "e")
+                .from(".c2 p", {
+                    opacity: 0
+                }, "e")
+                .to(".c2", {
+                    top: "-100%"
+                }, "f")
+                .to("h1", {
+                    y: "-200%"
+                }, "f")
+                .to(".p2", {
+                    top: "-100%"
+                }, "f")
+                .to(".p3", {
+                    top: "0%"
+                }, "f")
+                .to(".c3", {
+                    top: 0
+                }, "f")
+                .from(".c3 p", {
+                    opacity: 0
+                }, "f")
+
+        }
+        servicePageAnimation();
+    </script>
+</body>
+
+</html>
